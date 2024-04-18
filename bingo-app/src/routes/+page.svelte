@@ -2,7 +2,7 @@
     // @ts-nocheck
     import { onMount } from 'svelte';
     let textFields = [];
-    let textFieldsString = '';
+    let textFieldsString = '-create \n- a \n-dash seperated \n-list \n-of \n-text \n-fields \n-and \n-click \nthe \nbutton \nbelow \nto \nupdate \nthe \nbingo \ncard \nwith \nthe \nnew \nfields \n-';
     let bingoCard = [];
 
     function generateBingoCard() {
@@ -50,7 +50,7 @@
 </script>
 
 <h2>Enter Text Fields</h2>
-<textarea bind:value={textFieldsString}></textarea>
+<textarea class="input-area" bind:value={textFieldsString}></textarea><hr/>
 <button on:click={updateTextFields}>Update Text Fields</button>
 <hr>
 <button on:click={generateBingoCard}>Generate Bingo Card</button>
@@ -69,6 +69,10 @@
 
 
 <style>
+    .input-area {
+        width: 100%;
+        height: 10rem;
+    }
     .row {
         display: flex;
     }
